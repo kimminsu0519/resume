@@ -823,33 +823,103 @@
     }
   
     :root { --res-font-scale: 1; --res-line-height: 1.52; --res-sec-gap: 13px; --res-entry-gap: 12px; --pad-x: 17mm; --pad-top: 15mm; --pad-bottom: 14mm; }
-    body { margin: 0; background: #1e293b; }
-    .export-bar { position: sticky; top: 0; z-index: 500; background: #0f172a; color: #f8fafc; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; border-bottom: 1px solid #334155; }
+    body { margin: 0; background: #090d14; }
+    body.ppt-view { overflow: hidden; width: 100vw; height: 100dvh; }
+    body.ppt-view .export-bar { display: none; }
+
+    .resume-section-wrap { display: block !important; }
+    body.ppt-view .doc-canvas,
+    body.ppt-view .resume-section-wrap,
+    body.ppt-view .resume-wrap { display: block !important; width: 100%; height: 100%; padding: 0; margin: 0; }
+    body.ppt-view .resume-page { display: none; }
+    body.ppt-view .resume-page.ppt-active {
+      display: flex !important;
+      position: fixed; left: 50%; top: 50%;
+      transform: translate(-50%, -50%) scale(var(--ppt-scale, 1));
+      transform-origin: center center;
+      margin: 0; z-index: 200;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.72);
+    }
+    body.overview-mode .resume-section-wrap { padding: 12px 0 40px; }
+
+    .ppt-edge {
+      display: none; position: fixed; top: 50%; transform: translateY(-50%); z-index: 400;
+      width: 48px; height: 84px; border: 1px solid rgba(255,255,255,0.18); border-radius: 12px;
+      background: rgba(15,23,42,0.58); color: #f8fafc; font-size: 28px; font-weight: 700;
+      cursor: pointer; transition: opacity 0.25s ease, background 0.15s ease;
+    }
+    .ppt-edge:hover { background: rgba(37,99,235,0.88); }
+    .ppt-prev { left: 14px; }
+    .ppt-next { right: 14px; }
+    body.ppt-view .ppt-edge { display: flex; align-items: center; justify-content: center; }
+
+    .ppt-hud {
+      display: none; position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 410;
+      align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px;
+      background: rgba(15,23,42,0.88); border: 1px solid rgba(255,255,255,0.16); color: #f8fafc;
+      font-size: 13px; backdrop-filter: blur(8px); transition: opacity 0.25s ease;
+      max-width: calc(100vw - 24px); flex-wrap: nowrap;
+    }
+    body.ppt-view .ppt-hud { display: flex; }
+    .ppt-hud button {
+      border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.08);
+      color: #f8fafc; padding: 5px 10px; border-radius: 999px; cursor: pointer;
+      font-size: 12px; font-weight: 600; font-family: inherit; white-space: nowrap;
+    }
+    .ppt-hud button:hover { background: rgba(255,255,255,0.2); }
+    body.ppt-view.hud-idle .ppt-hud,
+    body.ppt-view.hud-idle .ppt-edge { opacity: 0; pointer-events: none; }
+
+    @media (max-width: 768px) {
+      .ppt-edge { width: 34px; height: 56px; font-size: 20px; }
+      .ppt-prev { left: 6px; }
+      .ppt-next { right: 6px; }
+      .ppt-hud { bottom: 10px; padding: 5px 9px; gap: 6px; font-size: 12px; }
+      .ppt-hud button { padding: 4px 8px; font-size: 11px; }
+      .ppt-hide-mobile { display: none; }
+    }
+
+    .export-bar {
+      position: sticky; top: 0; z-index: 500; background: #0f172a; color: #f8fafc;
+      padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px;
+      border-bottom: 1px solid #334155;
+    }
     .export-bar strong { line-height: 1.3; min-width: 0; }
     .export-bar .st-btn { white-space: nowrap; flex-shrink: 0; }
-    .resume-section-wrap { display: block !important; padding: 12px 0 40px; }
     @media (max-width: 600px) {
       .export-bar { padding: 8px 12px; font-size: 12px; gap: 8px; }
       .export-bar .st-btn { padding: 6px 10px; font-size: 11.5px; }
     }
+    body.overview-mode { background: #1e293b; overflow: auto; }
+    body.overview-mode .ppt-hud, body.overview-mode .ppt-edge { display: none !important; }
+
     @media print {
-      body { background: #fff !important; }
-      .export-bar { display: none !important; }
-      .resume-section-wrap { padding: 0 !important; }
-      .resume-page { box-shadow: none !important; margin: 0 !important; }
+      .export-bar, .ppt-hud, .ppt-edge { display: none !important; }
+      body, body.ppt-view, body.overview-mode { overflow: visible !important; width: auto !important; height: auto !important; background: #fff !important; }
+
+      body.ppt-view .resume-wrap,
+      body.overview-mode .resume-wrap { display: block !important; padding: 0 !important; margin: 0 !important; }
+      body.ppt-view .resume-section-wrap,
+      body.overview-mode .resume-section-wrap { padding: 0 !important; }
+      body.ppt-view .resume-page,
+      body.overview-mode .resume-page { display: flex !important; position: static !important; transform: none !important; box-shadow: none !important; margin: 0 !important; page-break-after: always; }
+      .resume-page:last-child { page-break-after: auto; }
     }
   </style>
   <style id="dynamicPageRule">@page { size: 210mm 297mm; margin: 0; }</style>
 </head>
-<body class="mode-resume">
+<body class="ppt-view">
   <div class="export-bar">
     <strong>김민수 이력서 · 로봇 S/W · 자율주행(ROS 2) 엔지니어</strong>
     <div style="display:flex; gap:8px;">
       <button class="st-btn" onclick="location.href='https://kimminsu0519.github.io/pf/'">포트폴리오 PPT</button>
-      <button class="st-btn primary" onclick="window.print()">이력서 PDF (A4)</button>
+      <button class="st-btn primary" onclick="setView('ppt')">발표 보기</button>
+      <button class="st-btn" onclick="printDeck()">PDF 저장 (A4)</button>
     </div>
   </div>
-  <section class="resume-section-wrap"><main class="resume-wrap">
+  <div class="doc-canvas">
+    <section class="resume-section-wrap" style="display:block;">
+      <main class="resume-wrap" id="resumeWrap">
         <section class="resume-page" id="res-p1" aria-label="이력서 1페이지">
           <header class="doc-header">
             <div class="name-block">
@@ -1110,32 +1180,168 @@
             <span>3 / 3</span>
           </footer>
         </section>
-      </main></section>
+      </main>
+    </section>
+  </div>
+
+  <button type="button" class="ppt-edge ppt-prev" onclick="stepSlide(-1)" aria-label="이전 페이지">&#8249;</button>
+  <button type="button" class="ppt-edge ppt-next" onclick="stepSlide(1)" aria-label="다음 페이지">&#8250;</button>
+  <div class="ppt-hud" id="pptHud">
+    <button type="button" onclick="stepSlide(-1)">이전</button>
+    <span id="pptCounter" style="font-weight:700; min-width:52px; text-align:center;">1 / 1</span>
+    <button type="button" onclick="stepSlide(1)">다음</button>
+    <button type="button" onclick="setView('overview')">전체보기</button>
+    <button type="button" onclick="location.href='https://kimminsu0519.github.io/pf/'">포트폴리오</button>
+    <button type="button" class="ppt-hide-mobile" onclick="toggleFs()">전체화면(F)</button>
+    <button type="button" class="ppt-hide-mobile" onclick="printDeck()">PDF</button>
+  </div>
+
   <script>
-    function fitResumeMobile() {
-      const wrap = document.querySelector('.resume-wrap');
-      const pages = Array.from(document.querySelectorAll('.resume-page'));
-      if (!pages.length) return;
-      const baseW = pages[0].offsetWidth || 794;
-      const vw = document.documentElement.clientWidth - 20;
-      const sc = vw < baseW ? Math.max(0.4, vw / baseW) : 1;
-      pages.forEach(p => {
-        if (sc < 1) {
-          p.style.transform = 'scale(' + sc + ')';
-          p.style.transformOrigin = 'top center';
-          p.style.marginBottom = '-' + Math.round(p.offsetHeight * (1 - sc) - 10) + 'px';
+    const IS_PORTFOLIO = false;
+    const items = Array.from(document.querySelectorAll('#resumeWrap .resume-page'));
+    let curIdx = 0;
+    let hudTimer = null;
+
+    function updatePptScale() {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      if (document.body.classList.contains('ppt-view')) {
+        const active = items[curIdx] || items[0];
+        const bw = IS_PORTFOLIO ? 1920 : ((active && active.offsetWidth) || 794);
+        const bh = IS_PORTFOLIO ? 1080 : ((active && active.offsetHeight) || 1123);
+        const pad = vw <= 768 ? (IS_PORTFOLIO ? 4 : 8) : (IS_PORTFOLIO ? 24 : 28);
+        const scale = Math.min((vw - pad) / bw, (vh - pad) / bh);
+        document.documentElement.style.setProperty('--ppt-scale', String(scale));
+      } else if (IS_PORTFOLIO) {
+        const ovPad = vw <= 768 ? 16 : 48;
+        const scale = Math.min(1, Math.max(vw - ovPad, 300) / 1920);
+        items.forEach(slot => {
+          slot.style.width = (1920 * scale) + 'px';
+          slot.style.height = (1080 * scale) + 'px';
+          slot.firstElementChild.style.transform = scale < 1 ? 'scale(' + scale + ')' : 'none';
+          slot.firstElementChild.style.transformOrigin = 'top left';
+        });
+      } else {
+        if (!items.length) return;
+        const baseW = items[0].offsetWidth || 794;
+        const ovW = document.documentElement.clientWidth - 20;
+        const sc = ovW < baseW ? Math.max(0.4, ovW / baseW) : 1;
+        items.forEach(p => {
+          if (sc < 1) {
+            p.style.transform = 'scale(' + sc + ')';
+            p.style.transformOrigin = 'top center';
+            p.style.marginBottom = '-' + Math.round(p.offsetHeight * (1 - sc) - 10) + 'px';
+          } else {
+            p.style.transform = '';
+            p.style.marginBottom = '';
+          }
+        });
+      }
+    }
+
+    function showSlide(idx, updateHash = true) {
+      if (!items.length) return;
+      curIdx = Math.max(0, Math.min(items.length - 1, idx));
+      items.forEach((el, i) => el.classList.toggle('ppt-active', i === curIdx));
+      document.getElementById('pptCounter').textContent = (curIdx + 1) + ' / ' + items.length;
+      if (updateHash && items[curIdx].id) history.replaceState(null, '', '#' + items[curIdx].id);
+      if (document.body.classList.contains('ppt-view')) updatePptScale();
+    }
+
+    function stepSlide(delta) { showSlide(curIdx + delta); }
+
+    window.jumpTo = function(id) {
+      const idx = items.findIndex(el => el.id === id);
+      if (idx >= 0) {
+        if (document.body.classList.contains('ppt-view')) showSlide(idx);
+        else items[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    function setView(mode) {
+      if (mode === 'overview') {
+        document.body.classList.remove('ppt-view', 'hud-idle');
+        document.body.classList.add('overview-mode');
+      } else {
+        document.body.classList.remove('overview-mode');
+        document.body.classList.add('ppt-view');
+        items.forEach(el => {
+          el.style.width = ''; el.style.height = '';
+          el.style.transform = ''; el.style.marginBottom = '';
+          if (IS_PORTFOLIO && el.firstElementChild) el.firstElementChild.style.transform = '';
+        });
+        showSlide(curIdx, false);
+      }
+      updatePptScale();
+    }
+
+    function wakeHud() {
+      if (!document.body.classList.contains('ppt-view')) return;
+      document.body.classList.remove('hud-idle');
+      if (hudTimer) clearTimeout(hudTimer);
+      hudTimer = setTimeout(() => {
+        if (document.body.classList.contains('ppt-view')) document.body.classList.add('hud-idle');
+      }, 2400);
+    }
+    function hideHudNow() {
+      if (hudTimer) clearTimeout(hudTimer);
+      if (document.body.classList.contains('ppt-view')) document.body.classList.add('hud-idle');
+    }
+
+    function toggleFs() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen?.().catch(() => {});
+      else document.exitFullscreen?.().catch(() => {});
+    }
+
+    function printDeck() {
+      const prev = document.body.classList.contains('ppt-view') ? 'ppt' : 'overview';
+      setView('overview');
+      items.forEach(el => {
+        if (IS_PORTFOLIO) {
+          el.style.width = '1920px'; el.style.height = '1080px';
+          if (el.firstElementChild) el.firstElementChild.style.transform = 'none';
         } else {
-          p.style.transform = '';
-          p.style.marginBottom = '';
+          el.style.transform = ''; el.style.marginBottom = '';
         }
       });
+      window.print();
+      setTimeout(() => setView(prev), 300);
     }
-    window.addEventListener('resize', fitResumeMobile);
-    window.addEventListener('beforeprint', () => {
-      document.querySelectorAll('.resume-page').forEach(p => { p.style.transform = ''; p.style.marginBottom = ''; });
+
+    document.addEventListener('keydown', (e) => {
+      if (!document.body.classList.contains('ppt-view')) return;
+      if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); stepSlide(1); hideHudNow(); }
+      else if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); stepSlide(-1); hideHudNow(); }
+      else if (e.key === 'Home') { e.preventDefault(); showSlide(0); hideHudNow(); }
+      else if (e.key === 'End') { e.preventDefault(); showSlide(items.length - 1); hideHudNow(); }
+      else if (e.key === 'f' || e.key === 'F') { toggleFs(); }
     });
-    window.addEventListener('afterprint', fitResumeMobile);
-    fitResumeMobile();
+
+    let touchX = null, touchY = null;
+    document.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) { touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; }
+    }, { passive: true });
+    document.addEventListener('touchend', (e) => {
+      if (touchX === null || !document.body.classList.contains('ppt-view')) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      const dy = e.changedTouches[0].clientY - touchY;
+      touchX = null; touchY = null;
+      if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+        stepSlide(dx < 0 ? 1 : -1);
+      } else if (Math.abs(dx) < 8 && Math.abs(dy) < 8 && !e.target.closest('a,button')) {
+        if (document.body.classList.contains('hud-idle')) wakeHud();
+        else hideHudNow();
+      }
+    }, { passive: true });
+
+    window.addEventListener('mousemove', wakeHud);
+    window.addEventListener('resize', updatePptScale);
+
+    const initHash = (location.hash || '').slice(1);
+    const hashIdx = initHash ? items.findIndex(el => el.id === initHash) : -1;
+    showSlide(hashIdx >= 0 ? hashIdx : 0, false);
+    updatePptScale();
+    wakeHud();
   </script>
 </body>
 </html>
