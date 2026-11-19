@@ -832,24 +832,32 @@
     }
   
     :root { --res-font-scale: 1; --res-line-height: 1.52; --res-sec-gap: 13px; --res-entry-gap: 12px; --pad-x: 17mm; --pad-top: 15mm; --pad-bottom: 14mm; }
-    body { margin: 0; background: #090d14; }
+    html { max-width: 100%; overflow-x: clip; }
+    body { margin: 0; background: #090d14; width: 100%; max-width: 100%; }
     body.ppt-view { overflow: hidden; width: 100vw; height: 100dvh; }
     body.ppt-view .export-bar { display: none; }
+    .doc-canvas, .portfolio-section-wrap, .resume-section-wrap, .deck, .resume-wrap {
+      width: 100%; max-width: 100%; box-sizing: border-box; overflow-x: clip;
+    }
+    body.overview-mode .resume-slot { position: relative; overflow: hidden; flex-shrink: 0; max-width: 100%; }
 
     .resume-section-wrap { display: block !important; }
     body.ppt-view .doc-canvas,
     body.ppt-view .resume-section-wrap,
     body.ppt-view .resume-wrap { display: block !important; width: 100%; height: 100%; padding: 0; margin: 0; }
-    body.ppt-view .resume-page { display: none; }
-    body.ppt-view .resume-page.ppt-active {
+    body.ppt-view .resume-slot { display: none; }
+    body.ppt-view .resume-slot.ppt-active {
       display: flex !important;
       position: fixed; left: 50%; top: 50%;
+      width: var(--res-page-w, 794px); height: var(--res-page-h, 1123px);
       transform: translate(-50%, -50%) scale(var(--ppt-scale, 1));
       transform-origin: center center;
       margin: 0; z-index: 200;
       box-shadow: 0 24px 70px rgba(0,0,0,0.72);
     }
-    body.overview-mode .resume-section-wrap { padding: 12px 0 40px; }
+    body.ppt-view .resume-slot.ppt-active > .resume-page { transform: none !important; margin: 0 !important; }
+    body.overview-mode .resume-section-wrap { padding: 0; }
+    body.overview-mode .resume-wrap { padding: 20px 8px 60px; gap: 18px; }
 
     .ppt-edge {
       display: none; position: fixed; top: 50%; transform: translateY(-50%); z-index: 400;
@@ -891,28 +899,32 @@
     .export-bar {
       position: sticky; top: 0; z-index: 500; background: #0f172a; color: #f8fafc;
       padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px;
-      border-bottom: 1px solid #334155;
+      border-bottom: 1px solid #334155; box-sizing: border-box; max-width: 100%;
     }
     .export-bar strong { line-height: 1.3; min-width: 0; }
     .export-bar .st-btn { white-space: nowrap; flex-shrink: 0; }
-    @media (max-width: 600px) {
-      .export-bar { padding: 8px 12px; font-size: 12px; gap: 8px; }
-      .export-bar .st-btn { padding: 6px 10px; font-size: 11.5px; }
+    @media (max-width: 720px) {
+      .export-bar { flex-direction: column; align-items: stretch; padding: 8px 12px; font-size: 12px; gap: 8px; }
+      .export-bar strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; }
+      .export-bar > div { width: 100%; justify-content: center; flex-wrap: wrap; gap: 6px !important; }
+      .export-bar .st-btn { padding: 6px 10px; font-size: 11.5px; flex: 1 1 auto; text-align: center; }
     }
-    body.overview-mode { background: #1e293b; overflow: auto; }
+    body.overview-mode { background: #1e293b; overflow-x: clip; overflow-y: auto; width: 100%; max-width: 100%; }
     body.overview-mode .ppt-hud, body.overview-mode .ppt-edge { display: none !important; }
 
     @media print {
       .export-bar, .ppt-hud, .ppt-edge { display: none !important; }
-      body, body.ppt-view, body.overview-mode { overflow: visible !important; width: auto !important; height: auto !important; background: #fff !important; }
+      html, body, body.ppt-view, body.overview-mode { overflow: visible !important; width: auto !important; height: auto !important; background: #fff !important; }
 
       body.ppt-view .resume-wrap,
       body.overview-mode .resume-wrap { display: block !important; padding: 0 !important; margin: 0 !important; }
       body.ppt-view .resume-section-wrap,
       body.overview-mode .resume-section-wrap { padding: 0 !important; }
+      body.ppt-view .resume-slot,
+      body.overview-mode .resume-slot { display: block !important; position: static !important; width: auto !important; height: auto !important; overflow: visible !important; transform: none !important; margin: 0 !important; box-shadow: none !important; page-break-after: always; }
       body.ppt-view .resume-page,
-      body.overview-mode .resume-page { display: flex !important; position: static !important; transform: none !important; box-shadow: none !important; margin: 0 !important; page-break-after: always; }
-      .resume-page:last-child { page-break-after: auto; }
+      body.overview-mode .resume-page { display: flex !important; position: static !important; transform: none !important; box-shadow: none !important; margin: 0 !important; }
+      .resume-slot:last-child { page-break-after: auto; }
     }
   </style>
   <style id="dynamicPageRule">@page { size: 210mm 297mm; margin: 0; }</style>
@@ -1207,42 +1219,57 @@
 
   <script>
     const IS_PORTFOLIO = false;
-    const items = Array.from(document.querySelectorAll('#resumeWrap .resume-page'));
+    if (!IS_PORTFOLIO) {
+      document.querySelectorAll('#resumeWrap .resume-page').forEach(page => {
+        if (!page.parentElement.classList.contains('resume-slot')) {
+          const slot = document.createElement('div');
+          slot.className = 'resume-slot';
+          if (page.id) slot.dataset.pageId = page.id;
+          page.parentNode.insertBefore(slot, page);
+          slot.appendChild(page);
+        }
+      });
+    }
+    const items = Array.from(document.querySelectorAll('#resumeWrap .resume-slot'));
+    let baseResumeW = 794;
+    let baseResumeH = 1123;
     let curIdx = 0;
     let hudTimer = null;
 
+    function measureResumeBase() {
+      if (IS_PORTFOLIO) return;
+      const active = items[curIdx] || items[0];
+      const page = active ? active.firstElementChild : null;
+      if (page && page.offsetWidth > 200) {
+        baseResumeW = page.offsetWidth;
+        baseResumeH = page.offsetHeight || 1123;
+        document.documentElement.style.setProperty('--res-page-w', baseResumeW + 'px');
+        document.documentElement.style.setProperty('--res-page-h', baseResumeH + 'px');
+      }
+    }
+
     function updatePptScale() {
-      const vw = window.innerWidth;
+      const vw = Math.min(document.documentElement.clientWidth || window.innerWidth, window.innerWidth);
       const vh = window.innerHeight;
+      measureResumeBase();
+      const bw = IS_PORTFOLIO ? 1920 : baseResumeW;
+      const bh = IS_PORTFOLIO ? 1080 : baseResumeH;
+
       if (document.body.classList.contains('ppt-view')) {
-        const active = items[curIdx] || items[0];
-        const bw = IS_PORTFOLIO ? 1920 : ((active && active.offsetWidth) || 794);
-        const bh = IS_PORTFOLIO ? 1080 : ((active && active.offsetHeight) || 1123);
         const pad = vw <= 768 ? (IS_PORTFOLIO ? 4 : 8) : (IS_PORTFOLIO ? 24 : 28);
         const scale = Math.min((vw - pad) / bw, (vh - pad) / bh);
         document.documentElement.style.setProperty('--ppt-scale', String(scale));
-      } else if (IS_PORTFOLIO) {
-        const ovPad = vw <= 768 ? 16 : 48;
-        const scale = Math.min(1, Math.max(vw - ovPad, 300) / 1920);
-        items.forEach(slot => {
-          slot.style.width = (1920 * scale) + 'px';
-          slot.style.height = (1080 * scale) + 'px';
-          slot.firstElementChild.style.transform = scale < 1 ? 'scale(' + scale + ')' : 'none';
-          slot.firstElementChild.style.transformOrigin = 'top left';
-        });
       } else {
-        if (!items.length) return;
-        const baseW = items[0].offsetWidth || 794;
-        const ovW = document.documentElement.clientWidth - 20;
-        const sc = ovW < baseW ? Math.max(0.4, ovW / baseW) : 1;
-        items.forEach(p => {
-          if (sc < 1) {
-            p.style.transform = 'scale(' + sc + ')';
-            p.style.transformOrigin = 'top center';
-            p.style.marginBottom = '-' + Math.round(p.offsetHeight * (1 - sc) - 10) + 'px';
-          } else {
-            p.style.transform = '';
-            p.style.marginBottom = '';
+        const ovPad = vw <= 768 ? 16 : 56;
+        const availW = Math.max(vw - ovPad, 240);
+        const scale = Math.min(1, availW / bw);
+        items.forEach(slot => {
+          slot.style.width = Math.floor(bw * scale) + 'px';
+          slot.style.height = Math.floor(bh * scale) + 'px';
+          const inner = slot.firstElementChild;
+          if (inner) {
+            inner.style.transform = scale < 1 ? 'scale(' + scale + ')' : 'none';
+            inner.style.transformOrigin = 'top left';
           }
         });
       }
@@ -1253,14 +1280,15 @@
       curIdx = Math.max(0, Math.min(items.length - 1, idx));
       items.forEach((el, i) => el.classList.toggle('ppt-active', i === curIdx));
       document.getElementById('pptCounter').textContent = (curIdx + 1) + ' / ' + items.length;
-      if (updateHash && items[curIdx].id) history.replaceState(null, '', '#' + items[curIdx].id);
+      const targetId = items[curIdx].id || items[curIdx].dataset.pageId;
+      if (updateHash && targetId) history.replaceState(null, '', '#' + targetId);
       if (document.body.classList.contains('ppt-view')) updatePptScale();
     }
 
     function stepSlide(delta) { showSlide(curIdx + delta); }
 
     window.jumpTo = function(id) {
-      const idx = items.findIndex(el => el.id === id);
+      const idx = items.findIndex(el => el.id === id || el.dataset.pageId === id);
       if (idx >= 0) {
         if (document.body.classList.contains('ppt-view')) showSlide(idx);
         else items[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1276,12 +1304,12 @@
         document.body.classList.add('ppt-view');
         items.forEach(el => {
           el.style.width = ''; el.style.height = '';
-          el.style.transform = ''; el.style.marginBottom = '';
-          if (IS_PORTFOLIO && el.firstElementChild) el.firstElementChild.style.transform = '';
+          if (el.firstElementChild) el.firstElementChild.style.transform = '';
         });
         showSlide(curIdx, false);
       }
       updatePptScale();
+      requestAnimationFrame(updatePptScale);
     }
 
     function wakeHud() {
@@ -1305,13 +1333,11 @@
     function printDeck() {
       const prev = document.body.classList.contains('ppt-view') ? 'ppt' : 'overview';
       setView('overview');
+      const bw = IS_PORTFOLIO ? 1920 : baseResumeW;
+      const bh = IS_PORTFOLIO ? 1080 : baseResumeH;
       items.forEach(el => {
-        if (IS_PORTFOLIO) {
-          el.style.width = '1920px'; el.style.height = '1080px';
-          if (el.firstElementChild) el.firstElementChild.style.transform = 'none';
-        } else {
-          el.style.transform = ''; el.style.marginBottom = '';
-        }
+        el.style.width = bw + 'px'; el.style.height = bh + 'px';
+        if (el.firstElementChild) el.firstElementChild.style.transform = 'none';
       });
       window.print();
       setTimeout(() => setView(prev), 300);
@@ -1345,9 +1371,10 @@
 
     window.addEventListener('mousemove', wakeHud);
     window.addEventListener('resize', updatePptScale);
+    window.addEventListener('orientationchange', () => setTimeout(updatePptScale, 150));
 
     const initHash = (location.hash || '').slice(1);
-    const hashIdx = initHash ? items.findIndex(el => el.id === initHash) : -1;
+    const hashIdx = initHash ? items.findIndex(el => el.id === initHash || el.dataset.pageId === initHash) : -1;
     showSlide(hashIdx >= 0 ? hashIdx : 0, false);
     updatePptScale();
     wakeHud();
