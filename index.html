@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>김민수 이력서 - 로봇 S/W · 자율주행(ROS 2) 엔지니어</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet" />
+  <style>
+
+    /* Hallmark · shape: app screen · genre: modern-minimal · theme: Cobalt · deal: manual · posture: restrained · signature: versioned resume/portfolio builder with live diff and standalone export · v2.0.0 */
+    /* Hallmark · pre-emit critique: P5 H5 E5 S5 R4 V5 · weakest: R, kept studio chrome strictly to Cobalt paper/ink tokens so document A4/16:9 colours stay sovereign */
+
+    :root {
+      --color-paper: oklch(98.6% 0.005 250);
+      --color-paper-2: oklch(96.2% 0.008 252);
+      --color-paper-3: oklch(93% 0.011 252);
+      --color-ink: oklch(21% 0.028 262);
+      --color-ink-2: oklch(36% 0.022 260);
+      --color-muted: oklch(50% 0.018 258);
+      --color-rule: oklch(90% 0.009 252);
+      --color-rule-2: oklch(82% 0.014 252);
+      --color-graphite: oklch(21% 0.024 262);
+      --color-graphite-2: oklch(26.5% 0.026 262);
+      --color-graphite-ink: oklch(93% 0.010 250);
+      --color-accent: oklch(52% 0.19 258);
+      --color-accent-deep: oklch(43% 0.2 262);
+      --color-accent-edge: oklch(39% 0.16 260);
+      --color-accent-wash: oklch(95% 0.028 256);
+      --color-accent-ink: oklch(98.6% 0.005 250);
+      --color-focus: oklch(52% 0.19 258);
+      --color-warn: oklch(56% 0.16 62);
+      --color-warn-wash: oklch(95% 0.04 78);
+      --color-ok: oklch(46% 0.14 155);
+      --color-ok-wash: oklch(94.5% 0.035 158);
+      --color-err: oklch(48% 0.175 22);
+      --color-err-wash: oklch(95% 0.03 22);
+
+      --font-display: "Familjen Grotesk", "Pretendard Variable", system-ui, sans-serif;
+      --font-body: "IBM Plex Sans", "Pretendard Variable", "Pretendard", system-ui, sans-serif;
+      --font-outlier: "JetBrains Mono", ui-monospace, monospace;
+      --font-sans: "Pretendard Variable", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+      --space-2xs: 4px;
+      --space-xs: 8px;
+      --space-sm: 12px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --radius-input: 6px;
+      --radius-card: 8px;
+      --shadow-card: 0 1px 2px oklch(21% 0.028 262 / 0.06);
+
+      /* Resume & Portfolio Document Tokens */
+      --page-w: 210mm;
+      --page-h: 297mm;
+      --pad-x: 17mm;
+      --pad-top: 15mm;
+      --pad-bottom: 14mm;
+      --res-font-scale: 1;
+      --res-line-height: 1.52;
+      --res-sec-gap: 13px;
+      --res-entry-gap: 12px;
+      --bg-desk: #1e2530;
+      --bg-paper: #ffffff;
+      --bg-subtle: #f6f8fb;
+      --bg-pill: #eff4fa;
+      --ink-primary: #141a24;
+      --ink-secondary: #3a4556;
+      --ink-muted: #647082;
+      --accent: #1d5fa7;
+      --accent-soft: #d9e6f4;
+      --border: #dce3ec;
+
+      --slide-w: 1920px;
+      --slide-h: 1080px;
+      --ink-900: #0f172a;
+      --ink-700: #334155;
+      --ink-500: #647082;
+      --white: #ffffff;
+      --surface-muted: #f8fafc;
+      --border-neutral: #cbd5e1;
+      --t0-bg: #f1f5f9; --t0-accent: #1e40af; --t0-border: #cbd5e1;
+      --t1-bg: #eef2ff; --t1-accent: #4338ca; --t1-dark: #312e81; --t1-border: #c7d2fe; --t1-hl: #e0e7ff;
+      --t2-bg: #e3f0d6; --t2-accent: #6aa832; --t2-dark: #2e7d32; --t2-border: #c8dbb8; --t2-hl: #e3f2d3;
+      --t3-bg: #eef1f5; --t3-accent: #334155; --t3-dark: #1e293b; --t3-border: #cbd5e1; --t3-hl: #e2e8f0;
+      --t4-bg: #fdf2ea; --t4-accent: #d9531e; --t4-dark: #9a3412; --t4-border: #f2cbb5; --t4-hl: #ffedd5;
+      --t5-bg: #eef7f6; --t5-accent: #0f766e; --t5-dark: #115e59; --t5-border: #bee3de; --t5-hl: #ccfbf1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      overflow-x: clip;
+      background-color: var(--color-paper-2);
+      color: var(--color-ink);
+      font-family: var(--font-body);
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--color-focus);
+      outline-offset: 2px;
+    }
+
+    /* ================= Studio Top Bar ================= */
+    .studio-bar {
+      position: sticky;
+      top: 0;
+      z-index: 600;
+      background: var(--color-paper);
+      border-bottom: 1px solid var(--color-rule-2);
+      padding: var(--space-xs) var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      box-shadow: var(--shadow-card);
+    }
+
+    .studio-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .studio-logo {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-ink);
+      letter-spacing: -0.02em;
+    }
+    .studio-sub {
+      font-size: 12.5px;
+      color: var(--color-muted);
+    }
+
+    .studio-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .st-select, .st-input, .st-textarea {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--color-ink);
+      background: var(--color-paper);
+      border: 1px solid var(--color-rule-2);
+      border-radius: var(--radius-input);
+      padding: 6px 10px;
+    }
+    .st-select { min-width: 230px; font-weight: 600; }
+    .st-textarea { width: 100%; resize: vertical; line-height: 1.48; }
+
+    .st-btn {
+      border: 1px solid var(--color-rule-2);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      border-radius: var(--radius-input);
+      padding: 6px 11px;
+      font-family: var(--font-body);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: background-color 0.12s ease, border-color 0.12s ease;
+    }
+    .st-btn:hover { background: var(--color-paper-2); border-color: var(--color-muted); }
+    .st-btn.active {
+      background: var(--color-graphite);
+      border-color: var(--color-graphite);
+      color: var(--color-graphite-ink);
+    }
+    .st-btn.primary {
+      background: var(--color-accent);
+      border-color: var(--color-accent-edge);
+      color: var(--color-accent-ink);
+    }
+    .st-btn.primary:hover { background: var(--color-accent-deep); }
+    .st-btn.warn {
+      background: var(--color-warn-wash);
+      border-color: var(--color-warn);
+      color: var(--color-warn);
+    }
+    .st-btn.danger {
+      background: var(--color-err-wash);
+      border-color: var(--color-err);
+      color: var(--color-err);
+    }
+
+    .dirty-status {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-ok);
+      padding: 3px 8px;
+      border-radius: var(--radius-input);
+      background: var(--color-ok-wash);
+    }
+    .dirty-status.is-dirty {
+      color: var(--color-warn);
+      background: var(--color-warn-wash);
+    }
+
+    /* ================= Studio Workspace Shell ================= */
+    .studio-shell {
+      display: grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      min-height: calc(100vh - 54px);
+    }
+    body.sidebar-collapsed .studio-shell {
+      grid-template-columns: 0px minmax(0, 1fr);
+    }
+    body.sidebar-collapsed .studio-sidebar {
+      width: 0;
+      padding: 0;
+      overflow: hidden;
+      border-right: none;
+    }
+
+    .studio-sidebar {
+      background: var(--color-paper);
+      border-right: 1px solid var(--color-rule-2);
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 54px);
+      position: sticky;
+      top: 54px;
+      overflow: hidden;
+    }
+
+    .side-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--color-rule);
+      background: var(--color-paper-2);
+    }
+    .side-tab {
+      border: none;
+      background: transparent;
+      padding: 10px 6px;
+      font-family: var(--font-body);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--color-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+    }
+    .side-tab.active {
+      color: var(--color-accent);
+      background: var(--color-paper);
+      border-bottom-color: var(--color-accent);
+    }
+
+    .side-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .field-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-ink-2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .panel-box {
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-card);
+      background: var(--color-paper);
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .panel-title {
+      font-family: var(--font-display);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--color-ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .order-item {
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-input);
+      padding: 8px 10px;
+      background: var(--color-paper-2);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .order-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+    .order-check {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--color-ink);
+      cursor: pointer;
+      flex: 1;
+      min-width: 0;
+    }
+    .order-check span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .mini-btns {
+      display: flex;
+      gap: 3px;
+      flex-shrink: 0;
+    }
+    .mini-btn {
+      border: 1px solid var(--color-rule-2);
+      background: var(--color-paper);
+      color: var(--color-ink-2);
+      border-radius: 4px;
+      width: 24px;
+      height: 22px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .mini-btn:hover { background: var(--color-accent-wash); color: var(--color-accent); }
+
+    .bullet-toggles {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-top: 1px dashed var(--color-rule);
+      padding-top: 6px;
+    }
+    .bullet-toggle-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11.5px;
+      color: var(--color-ink-2);
+      cursor: pointer;
+      line-height: 1.35;
+    }
+
+    /* ================= Studio Main Stage ================= */
+    .studio-stage {
+      background: var(--bg-desk);
+      min-width: 0;
+      padding-bottom: 48px;
+    }
+
+    .stage-subbar {
+      background: var(--color-graphite);
+      color: var(--color-graphite-ink);
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      border-bottom: 1px solid #334155;
+    }
+    .jump-pill {
+      border: 1px solid #334155;
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      background: #1e293b;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .jump-pill:hover { background: #334155; color: #ffffff; }
+
+    .overflow-alert {
+      display: none;
+      background: #78350f;
+      color: #fef3c7;
+      padding: 7px 16px;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .overflow-alert.show { display: block; }
+
+    /* Diff & Git Views */
+    .utility-view {
+      display: none;
+      max-width: 1120px;
+      margin: 24px auto;
+      padding: 0 20px;
+    }
+    body.mode-diff #diffView { display: block; }
+    body.mode-git #gitView { display: block; }
+    body.mode-diff #docCanvas,
+    body.mode-git #docCanvas { display: none; }
+    body.mode-resume .portfolio-section-wrap { display: none !important; }
+    body.mode-portfolio .resume-section-wrap { display: none !important; }
+
+    .util-card {
+      background: var(--color-paper);
+      border: 1px solid var(--color-rule-2);
+      border-radius: var(--radius-card);
+      padding: 20px 24px;
+      color: var(--color-ink);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--shadow-card);
+    }
+    .diff-table, .git-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .diff-table th, .diff-table td, .git-table th, .git-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--color-rule);
+      text-align: left;
+      vertical-align: top;
+    }
+    .diff-table th, .git-table th {
+      background: var(--color-paper-2);
+      font-weight: 600;
+      color: var(--color-ink-2);
+    }
+    .diff-changed { background: var(--color-accent-wash); }
+    .mono { font-family: var(--font-outlier); font-size: 12px; }
+
+    /* ================= Document Styles (Exact A4 + 1920x1080 Preservation) ================= */
+    .doc-canvas a { color: var(--accent); text-decoration: none; }
+    .doc-canvas a:hover { text-decoration: underline; }
+    .section-divider-banner {
+      width: 100%;
+      max-width: 1120px;
+      margin: 22px auto 12px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      color: #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13.5px;
+      font-weight: 700;
+      font-family: var(--font-sans);
+    }
+    body.mode-resume .section-divider-banner,
+    body.mode-portfolio .section-divider-banner { display: none !important; }
+
+    .resume-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 12px 24px;
+      font-family: var(--font-sans);
+      font-size: calc(9.4pt * var(--res-font-scale));
+      line-height: var(--res-line-height);
+      color: var(--ink-primary);
+    }
+    .resume-page {
+      position: relative;
+      width: var(--page-w);
+      height: var(--page-h);
+      padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+      background-color: var(--bg-paper);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      page: a4page;
+    }
+    .resume-page.is-overflowing {
+      outline: 3px solid #f59e0b;
+    }
+    .resume-wrap .page-footer {
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: calc(8pt * var(--res-font-scale));
+      color: var(--ink-muted);
+    }
+    .resume-wrap .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 8px;
+      margin-bottom: var(--res-sec-gap);
+      border-bottom: 2px solid var(--ink-primary);
+    }
+    .resume-wrap .doc-header .name-block h1 { font-size: calc(20pt * var(--res-font-scale)); font-weight: 800; letter-spacing: -0.02em; color: var(--ink-primary); line-height: 1.15; }
+    .resume-wrap .doc-header .name-block .role-sub { margin-top: 2px; font-size: calc(9.8pt * var(--res-font-scale)); font-weight: 600; color: var(--accent); }
+    .resume-wrap .doc-header .doc-tag { font-size: calc(8.5pt * var(--res-font-scale)); color: var(--ink-muted); text-align: right; }
+    .resume-wrap .section { margin-bottom: var(--res-sec-gap); }
+    .resume-wrap .section:last-of-type { margin-bottom: 8px; }
+    .resume-wrap .section-title {
+      font-size: calc(11.5pt * var(--res-font-scale)); font-weight: 800; color: var(--accent); letter-spacing: 0.02em;
+      padding-bottom: 4px; margin-bottom: 9px; border-bottom: 1.5px solid var(--accent-soft);
+      display: flex; justify-content: space-between; align-items: baseline;
+    }
+    .resume-wrap .section-title .section-note { font-size: calc(8pt * var(--res-font-scale)); font-weight: 500; color: var(--ink-muted); }
+    .resume-wrap .intro-grid { display: grid; grid-template-columns: 31mm minmax(0, 1fr); gap: 14px; align-items: start; }
+    .resume-wrap .photo-box { width: 31mm; height: 41mm; border: 1px solid var(--border); background-color: var(--bg-subtle); overflow: hidden; }
+    .resume-wrap .photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .resume-wrap .intro-texts { display: flex; flex-direction: column; gap: 9px; }
+    .resume-wrap .intro-block h3 { font-size: calc(9.8pt * var(--res-font-scale)); font-weight: 700; color: var(--ink-primary); margin-bottom: 3px; }
+    .resume-wrap .intro-block p { font-size: calc(9pt * var(--res-font-scale)); color: var(--ink-secondary); line-height: var(--res-line-height); text-align: left; }
+    .resume-wrap .info-grid { display: grid; grid-template-columns: 0.84fr 1.36fr; gap: 16px; }
+    .resume-wrap .sub-heading { font-size: calc(9.8pt * var(--res-font-scale)); font-weight: 700; color: var(--ink-primary); margin-bottom: 6px; }
+    .resume-wrap .kv-list { list-style: none; display: flex; flex-direction: column; gap: 4.5px; }
+    .resume-wrap .kv-list li { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 6px; font-size: calc(9pt * var(--res-font-scale)); align-items: baseline; }
+    .resume-wrap .kv-label { color: var(--ink-muted); font-weight: 600; }
+    .resume-wrap .kv-val { color: var(--ink-primary); }
+    .resume-wrap .kv-val a,
+    .resume-wrap .pf-jump-link { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .resume-wrap .timeline-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .resume-wrap .timeline-item { padding-left: 9px; border-left: 2px solid var(--accent-soft); }
+    .resume-wrap .timeline-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+    .resume-wrap .timeline-org { font-size: calc(9.2pt * var(--res-font-scale)); font-weight: 700; color: var(--ink-primary); }
+    .resume-wrap .timeline-date { font-size: calc(8.3pt * var(--res-font-scale)); color: var(--ink-muted); white-space: nowrap; }
+    .resume-wrap .timeline-desc { font-size: calc(8.7pt * var(--res-font-scale)); color: var(--ink-secondary); margin-top: 1px; }
+    .resume-wrap .skills-table { width: 100%; border-collapse: collapse; border-top: 1px solid var(--border); }
+    .resume-wrap .skills-table tr { border-bottom: 1px solid var(--border); }
+    .resume-wrap .skills-table th { width: 128px; padding: 7px 8px; text-align: left; vertical-align: top; font-size: calc(8.7pt * var(--res-font-scale)); font-weight: 700; color: var(--ink-primary); background-color: var(--bg-subtle); }
+    .resume-wrap .skills-table td { padding: 6px 10px; vertical-align: middle; }
+    .resume-wrap .tag-row { display: flex; flex-wrap: wrap; gap: 4.5px; }
+    .resume-wrap .skill-tag { display: inline-block; padding: 2px 7px; font-size: calc(8.2pt * var(--res-font-scale)); font-weight: 500; color: var(--ink-secondary); background-color: var(--bg-pill); border: 1px solid var(--accent-soft); border-radius: 3px; }
+    .resume-wrap .skill-tag.is-core { font-weight: 700; color: #ffffff; background-color: var(--accent); border-color: var(--accent); }
+    .skill-ctrl-row { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 11.5px; color: var(--color-ink-2); }
+    .core-star-btn {
+      border: 1px solid var(--color-rule-2); background: var(--color-paper); color: var(--color-muted);
+      border-radius: 4px; padding: 1px 6px; font-size: 10.5px; font-weight: 700; cursor: pointer; flex-shrink: 0;
+    }
+    .core-star-btn.is-on { background: var(--color-accent); border-color: var(--color-accent-edge); color: var(--color-accent-ink); }
+    .slider-row { display: flex; flex-direction: column; gap: 3px; }
+    .slider-head { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--color-ink-2); font-weight: 600; }
+    .slider-head span.mono { font-family: var(--font-outlier); color: var(--color-accent); }
+    .slider-row input[type="range"] { width: 100%; accent-color: var(--color-accent); cursor: pointer; }
+    .resume-wrap .entry-block { margin-bottom: var(--res-entry-gap); padding-bottom: calc(var(--res-entry-gap) - 2px); border-bottom: 1px dashed var(--border); }
+    .resume-wrap .entry-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .resume-wrap .page-2 .section { margin-bottom: calc(var(--res-sec-gap) + 4px); }
+    .resume-wrap .page-2 .entry-block { margin-bottom: calc(var(--res-entry-gap) + 2px); padding-bottom: var(--res-entry-gap); }
+    .resume-wrap .page-2 .entry-block:last-child { margin-bottom: 0; padding-bottom: 0; }
+    .resume-wrap .entry-header { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+    .resume-wrap .entry-title { font-size: calc(10.4pt * var(--res-font-scale)); font-weight: 800; color: var(--ink-primary); }
+    .resume-wrap .entry-period { font-size: calc(8.6pt * var(--res-font-scale)); font-weight: 600; color: var(--accent); white-space: nowrap; }
+    .resume-wrap .entry-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-bottom: 5px; padding: 5px 8px; background-color: var(--bg-subtle); border-radius: 4px; font-size: calc(8.5pt * var(--res-font-scale)); color: var(--ink-secondary); }
+    .resume-wrap .entry-meta strong { color: var(--ink-primary); font-weight: 700; }
+    .resume-wrap .entry-summary { font-size: calc(8.8pt * var(--res-font-scale)); color: var(--ink-secondary); margin-bottom: 5px; }
+    .resume-wrap .entry-summary strong { color: var(--ink-primary); }
+    .resume-wrap .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 3.5px; }
+    .resume-wrap .bullet-list li { position: relative; padding-left: 11px; font-size: calc(8.85pt * var(--res-font-scale)); line-height: var(--res-line-height); color: var(--ink-secondary); }
+    .resume-wrap .bullet-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; }
+    .resume-wrap .bullet-list li strong { color: var(--ink-primary); font-weight: 700; }
+    .resume-wrap .bullet-list li code { font-family: var(--font-sans); font-size: calc(8.6pt * var(--res-font-scale)); font-weight: 600; color: var(--ink-primary); background-color: var(--bg-pill); padding: 0 4px; border-radius: 3px; }
+    .resume-wrap .cert-table { width: 100%; border-collapse: collapse; border-top: 1px solid var(--border); font-size: calc(8.9pt * var(--res-font-scale)); }
+    .resume-wrap .cert-table th, .resume-wrap .cert-table td { padding: 6.5px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+    .resume-wrap .cert-table th { font-weight: 700; color: var(--ink-muted); background-color: var(--bg-subtle); font-size: calc(8.4pt * var(--res-font-scale)); }
+    .resume-wrap .cert-table td.cert-name { font-weight: 700; color: var(--ink-primary); }
+
+    /* Portfolio 1920x1080 */
+    .deck { display: flex; flex-direction: column; align-items: center; gap: 28px; padding: 12px 16px 56px; font-family: var(--font-sans); }
+    .slide-slot { position: relative; }
+    .slide {
+      width: var(--slide-w); height: var(--slide-h); padding: 42px 54px 38px 54px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden; background-color: var(--t0-bg);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42); flex-shrink: 0; page: slidepage;
+      font-family: var(--font-sans);
+    }
+    .deck .page-num { position: absolute; right: 36px; bottom: 22px; font-size: 19px; font-weight: 700; color: var(--ink-700); }
+    .theme-lsm { background-color: var(--t1-bg); }
+    .theme-libo { background-color: var(--t2-bg); }
+    .theme-amr { background-color: var(--t3-bg); }
+    .theme-as { background-color: var(--t4-bg); }
+    .theme-wcrc { background-color: var(--t5-bg); }
+    .deck .header { display: flex; flex-direction: column; gap: 9px; }
+    .deck .header-top { display: flex; align-items: center; gap: 14px; }
+    .deck .brand-logo { font-size: 28px; font-weight: 800; letter-spacing: -0.6px; }
+    .deck .divider { width: 2.5px; height: 24px; opacity: 0.55; }
+    .deck .section-pill { color: var(--white); font-size: 15.5px; font-weight: 700; padding: 5px 18px; border-radius: 999px; letter-spacing: 0.2px; }
+    .deck .header-sub { font-size: 22px; font-weight: 700; color: var(--ink-900); }
+    .deck .main-title { font-size: 31px; font-weight: 800; color: var(--ink-900); letter-spacing: -0.6px; line-height: 1.24; }
+    .theme-lsm .brand-logo { color: var(--t1-accent); } .theme-lsm .divider { background-color: var(--t1-accent); } .theme-lsm .section-pill, .theme-lsm .card-badge { background-color: var(--t1-accent); }
+    .theme-libo .brand-logo { color: var(--t2-accent); } .theme-libo .divider { background-color: var(--t2-accent); } .theme-libo .section-pill, .theme-libo .card-badge { background-color: #82be48; }
+    .theme-amr .brand-logo { color: var(--t3-accent); } .theme-amr .divider { background-color: var(--t3-accent); } .theme-amr .section-pill, .theme-amr .card-badge { background-color: var(--t3-accent); }
+    .theme-as .brand-logo { color: var(--t4-accent); } .theme-as .divider { background-color: var(--t4-accent); } .theme-as .section-pill, .theme-as .card-badge { background-color: var(--t4-accent); }
+    .theme-wcrc .brand-logo { color: var(--t5-accent); } .theme-wcrc .divider { background-color: var(--t5-accent); } .theme-wcrc .section-pill, .theme-wcrc .card-badge { background-color: var(--t5-accent); }
+    .deck .card { background: var(--white); border: 1.5px solid var(--t0-border); border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05); }
+    .theme-lsm .card, .theme-lsm .text-card { border-color: var(--t1-border); }
+    .theme-libo .card, .theme-libo .text-card { border-color: var(--t2-border); }
+    .theme-amr .card, .theme-amr .text-card { border-color: var(--t3-border); }
+    .theme-as .card, .theme-as .text-card { border-color: var(--t4-border); }
+    .theme-wcrc .card, .theme-wcrc .text-card { border-color: var(--t5-border); }
+    .deck .card-badge { display: inline-block; align-self: flex-start; color: var(--white); font-size: 14.5px; font-weight: 700; padding: 5px 16px; border-radius: 999px; margin-bottom: 12px; }
+    .deck .middle-section { display: flex; gap: 24px; height: 470px; }
+    .deck .card-left { width: 1015px; }
+    .deck .card-right { flex: 1; }
+    .deck .diagram-wrapper { flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; gap: 14px; }
+    .deck .diagram-wrapper img, .deck .diagram-wrapper svg { max-width: 100%; max-height: 385px; object-fit: contain; }
+    .deck .proof-grid { flex: 1; display: flex; gap: 14px; align-items: stretch; }
+    .deck .proof-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: space-between; background: var(--surface-muted); border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px; }
+    .deck .proof-img-box { width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; background: #0f172a; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
+    .deck .proof-img-box.light { background: var(--white); }
+    .deck .proof-img-box img { width: 100%; height: 100%; object-fit: contain; }
+    .deck .proof-img-box img.cover { object-fit: cover; }
+    .deck .proof-caption { margin-top: 8px; font-size: 13.5px; font-weight: 600; color: var(--ink-700); text-align: center; line-height: 1.38; }
+    .deck .bottom-section { display: flex; gap: 24px; height: 368px; }
+    .deck .text-card { flex: 1; background: var(--white); border: 1.5px solid var(--border-neutral); border-radius: 16px; padding: 22px 26px; display: flex; flex-direction: column; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05); }
+    .deck .text-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1.5px solid #e2e8f0; }
+    .deck .pill-problem { background-color: #64748b !important; }
+    .theme-lsm .pill-result { background-color: var(--t1-dark) !important; }
+    .theme-libo .pill-result { background-color: var(--t2-dark) !important; }
+    .theme-amr .pill-result { background-color: var(--t3-dark) !important; }
+    .theme-as .pill-result { background-color: var(--t4-dark) !important; }
+    .deck .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .deck .bullet-list li { font-size: 16.8px; line-height: 1.48; color: var(--ink-900); padding-left: 22px; position: relative; }
+    .deck .bullet-list li::before { content: "✓"; position: absolute; left: 0; top: 0; font-weight: 800; font-size: 16.5px; }
+    .theme-lsm .bullet-list li::before { color: var(--t1-accent); }
+    .theme-libo .bullet-list li::before { color: var(--t2-accent); }
+    .theme-amr .bullet-list li::before { color: var(--t3-accent); }
+    .theme-as .bullet-list li::before { color: var(--t4-accent); }
+    .theme-wcrc .bullet-list li::before { color: var(--t5-accent); }
+    .deck .bullet-list li b { font-weight: 700; color: var(--ink-900); }
+    .theme-lsm .bullet-list li b { background: linear-gradient(transparent 65%, var(--t1-hl) 65%); }
+    .theme-libo .bullet-list li b { background: linear-gradient(transparent 65%, var(--t2-hl) 65%); }
+    .theme-amr .bullet-list li b { background: linear-gradient(transparent 65%, var(--t3-hl) 65%); }
+    .theme-as .bullet-list li b { background: linear-gradient(transparent 65%, var(--t4-hl) 65%); }
+    .deck .bullet-list li code { font-family: var(--font-sans); font-weight: 700; font-size: 15.8px; color: var(--ink-900); background: rgba(15, 23, 42, 0.06); padding: 1px 5px; border-radius: 4px; }
+    .deck .overview-grid { display: flex; gap: 28px; flex: 1; margin-top: 10px; }
+    .deck .ov-left { width: 730px; display: flex; flex-direction: column; gap: 18px; }
+    .deck .ov-right { flex: 1; display: flex; flex-direction: column; gap: 18px; }
+    .deck .meta-box { background: var(--white); border-radius: 16px; padding: 20px 26px; display: flex; flex-direction: column; gap: 12px; border: 1.5px solid var(--border-neutral); box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05); }
+    .deck .meta-row { display: flex; align-items: flex-start; gap: 14px; }
+    .deck .meta-pill { color: var(--white); font-size: 14.5px; font-weight: 700; padding: 4px 14px; border-radius: 999px; min-width: 112px; text-align: center; flex-shrink: 0; }
+    .deck .meta-val { font-size: 17px; color: var(--ink-900); font-weight: 500; line-height: 1.42; }
+    .deck .meta-val a { font-weight: 600; text-decoration: none; color: #1d5fa7; }
+    .theme-lsm .meta-val a { color: var(--t1-accent); }
+    .theme-libo .meta-val a { color: var(--t2-dark); }
+    .theme-lsm .meta-box, .theme-lsm .summary-box { border-color: var(--t1-border); } .theme-lsm .meta-pill { background: var(--t1-accent); }
+    .theme-libo .meta-box, .theme-libo .summary-box { border-color: var(--t2-border); } .theme-libo .meta-pill { background: #82be48; }
+    .theme-amr .meta-box, .theme-amr .summary-box { border-color: var(--t3-border); } .theme-amr .meta-pill { background: var(--t3-accent); }
+    .theme-as .meta-box, .theme-as .summary-box { border-color: var(--t4-border); } .theme-as .meta-pill { background: var(--t4-accent); }
+    .theme-wcrc .meta-box, .theme-wcrc .summary-box { border-color: var(--t5-border); } .theme-wcrc .meta-pill { background: var(--t5-accent); }
+    .deck .summary-box { background: var(--white); border-radius: 16px; padding: 24px 28px; flex: 1; border: 1.5px solid var(--border-neutral); display: flex; flex-direction: column; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05); }
+    .deck .summary-box .bullet-list { gap: 18px; }
+    .deck .summary-box .bullet-list li { font-size: 18px; line-height: 1.54; }
+    .slide-cover { background: linear-gradient(135deg, #0b1324 0%, #152238 60%, #172a46 100%); color: #ffffff; padding: 68px 80px 56px; }
+    .cover-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+    .cover-inner { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+    .cover-kicker { display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px; border-radius: 999px; background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(96, 165, 250, 0.45); color: #93c5fd; font-size: 16px; font-weight: 700; align-self: flex-start; }
+    .cover-title { font-size: 62px; font-weight: 800; line-height: 1.22; letter-spacing: -1.2px; margin-top: 28px; }
+    .cover-title span { color: #60a5fa; }
+    .cover-sub { margin-top: 22px; font-size: 24px; color: #cbd5e1; font-weight: 500; line-height: 1.5; }
+    .cover-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-top: 40px; }
+    .cover-card { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(148, 163, 184, 0.28); border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px; }
+    .cover-card-num { font-size: 13.5px; font-weight: 700; color: #60a5fa; letter-spacing: 0.5px; }
+    .cover-card-title { font-size: 21px; font-weight: 800; color: #ffffff; }
+    .cover-card-desc { font-size: 15px; color: #cbd5e1; line-height: 1.45; }
+    .cover-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(148, 163, 184, 0.25); font-size: 16px; color: #94a3b8; }
+    .profile-layout { display: grid; grid-template-columns: 560px minmax(0, 1fr); gap: 28px; flex: 1; margin-top: 10px; }
+    .profile-head { display: flex; gap: 20px; align-items: center; padding-bottom: 16px; border-bottom: 1.5px solid #e2e8f0; margin-bottom: 14px; }
+    .profile-pic { width: 118px; height: 152px; border-radius: 10px; object-fit: cover; object-position: top center; border: 1.5px solid #cbd5e1; }
+    .profile-name { font-size: 30px; font-weight: 800; color: var(--ink-900); }
+    .profile-role { font-size: 16.5px; font-weight: 700; color: #1d4ed8; margin-top: 3px; }
+    .profile-kv { font-size: 15px; color: var(--ink-700); line-height: 1.65; margin-top: 8px; }
+    .info-block-title { font-size: 15px; font-weight: 800; color: #1e40af; margin: 12px 0 6px; }
+    .info-mini-list { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px; color: var(--ink-700); }
+    .info-mini-list li strong { color: var(--ink-900); }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .skill-group { background: var(--surface-muted); border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 16px; }
+    .skill-group-title { font-size: 15px; font-weight: 800; color: var(--ink-900); margin-bottom: 8px; }
+    .pill-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tech-chip { padding: 4px 10px; border-radius: 6px; background: #eff6ff; border: 1px solid #bfdbfe; font-size: 13.5px; font-weight: 600; color: #1e3a8a; }
+    .metric-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 8px; }
+    .metric-table th, .metric-table td { padding: 6px 8px; border-bottom: 1px solid #e2e8f0; text-align: center; }
+    .metric-table th { background: #f1f5f9; font-weight: 700; color: var(--ink-900); font-size: 12.8px; }
+    .metric-table td:first-child, .metric-table th:first-child { text-align: left; font-weight: 700; }
+    .metric-table td.good { font-weight: 800; color: #1d4ed8; background: #eff6ff; }
+    .theme-lsm .metric-table td.good { color: var(--t1-accent); background: #eef2ff; }
+
+    /* Inline edit highlights */
+    body.editing [contenteditable="true"]:hover {
+      outline: 1.5px dashed #f59e0b;
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+    body.editing [contenteditable="true"]:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+      background: rgba(254, 243, 199, 0.35);
+      border-radius: 3px;
+    }
+
+    /* Present Mode */
+    body.present-mode { background: #090d14; overflow: hidden !important; width: 100vw; height: 100vh; }
+    body.present-mode .studio-bar,
+    body.present-mode .studio-sidebar,
+    body.present-mode .stage-subbar,
+    body.present-mode .section-divider-banner,
+    body.present-mode .overflow-alert { display: none !important; }
+    body.present-mode .studio-shell { display: block !important; }
+    body.present-mode .studio-stage { padding: 0 !important; background: #090d14 !important; }
+    body.present-mode .resume-wrap,
+    body.present-mode .deck { display: block !important; padding: 0 !important; margin: 0 !important; gap: 0 !important; }
+    body.present-mode .resume-page,
+    body.present-mode .slide-slot { display: none !important; }
+    body.present-mode .resume-page.present-active,
+    body.present-mode .slide-slot.present-active {
+      display: flex !important;
+      position: fixed !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) scale(var(--present-scale, 1)) !important;
+      transform-origin: center center !important;
+      margin: 0 !important;
+      z-index: 400;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.72);
+    }
+    body.present-mode .slide-slot.present-active { width: 1920px !important; height: 1080px !important; }
+    body.present-mode .slide-slot.present-active > .slide { transform: none !important; }
+
+    .present-hud, .present-edge-btn { display: none; }
+    body.present-mode .present-edge-btn {
+      display: flex; align-items: center; justify-content: center;
+      position: fixed; top: 50%; transform: translateY(-50%); z-index: 600;
+      width: 52px; height: 88px; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 12px;
+      background: rgba(15, 23, 42, 0.55); color: #f8fafc; font-size: 30px; font-weight: 700; cursor: pointer;
+    }
+    .present-prev { left: 16px; }
+    .present-next { right: 16px; }
+    body.present-mode .present-hud {
+      display: flex; align-items: center; gap: 10px; position: fixed; left: 50%; bottom: 18px;
+      transform: translateX(-50%); z-index: 620; padding: 8px 16px; border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(148, 163, 184, 0.28);
+      color: #f1f5f9; font-size: 13px; font-weight: 600; white-space: nowrap;
+    }
+    body.present-mode.hud-idle .present-hud,
+    body.present-mode.hud-idle .present-edge-btn { opacity: 0; pointer-events: none; }
+    .hud-btn {
+      border: 1px solid rgba(148, 163, 184, 0.3); background: rgba(30, 41, 59, 0.85);
+      color: #e2e8f0; border-radius: 999px; padding: 4px 11px; font-size: 12px; font-weight: 700; cursor: pointer;
+    }
+    .hud-btn:hover { background: #2563eb; color: #fff; }
+    .hud-indicator { color: #93c5fd; font-weight: 700; padding: 0 4px; }
+
+    /* Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: rgba(15, 23, 42, 0.5);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-card {
+      width: 100%;
+      max-width: 780px;
+      max-height: 88vh;
+      overflow-y: auto;
+      background: var(--color-paper);
+      border: 1px solid var(--color-rule-2);
+      border-radius: var(--radius-card);
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+    }
+
+    @media print {
+      html, body { background: #ffffff !important; margin: 0; padding: 0; }
+      .studio-bar, .studio-sidebar, .stage-subbar, .section-divider-banner, .overflow-alert, .present-hud, .present-edge-btn { display: none !important; }
+      .studio-shell { display: block !important; }
+      .studio-stage { padding: 0 !important; background: #ffffff !important; }
+      .resume-wrap, .deck { gap: 0; padding: 0; display: block; }
+      .resume-page {
+        width: 210mm; height: 297mm; margin: 0; box-shadow: none;
+        outline: none !important;
+        page-break-after: always; break-after: page;
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+      }
+      .slide-slot { transform: none !important; width: 1920px !important; height: 1080px !important; margin: 0 !important; }
+      .slide {
+        transform: none !important; box-shadow: none; page-break-after: always; break-after: page;
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+      }
+      body.print-resume-only .portfolio-section-wrap { display: none !important; }
+      body.print-portfolio-only .resume-section-wrap { display: none !important; }
+    }
+  
+    :root { --res-font-scale: 1; --res-line-height: 1.52; --res-sec-gap: 13px; --res-entry-gap: 12px; --pad-x: 17mm; --pad-top: 15mm; --pad-bottom: 14mm; }
+    body { margin: 0; background: #1e293b; }
+    .export-bar { position: sticky; top: 0; z-index: 500; background: #0f172a; color: #f8fafc; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; border-bottom: 1px solid #334155; }
+    .export-bar strong { line-height: 1.3; min-width: 0; }
+    .export-bar .st-btn { white-space: nowrap; flex-shrink: 0; }
+    .resume-section-wrap { display: block !important; padding: 12px 0 40px; }
+    @media (max-width: 600px) {
+      .export-bar { padding: 8px 12px; font-size: 12px; gap: 8px; }
+      .export-bar .st-btn { padding: 6px 10px; font-size: 11.5px; }
+    }
+    @media print {
+      body { background: #fff !important; }
+      .export-bar { display: none !important; }
+      .resume-section-wrap { padding: 0 !important; }
+      .resume-page { box-shadow: none !important; margin: 0 !important; }
+    }
+  </style>
+  <style id="dynamicPageRule">@page { size: 210mm 297mm; margin: 0; }</style>
+</head>
+<body class="mode-resume">
+  <div class="export-bar">
+    <strong>김민수 이력서 · 로봇 S/W · 자율주행(ROS 2) 엔지니어</strong>
+    <div style="display:flex; gap:8px;">
+      <button class="st-btn" onclick="location.href='https://kimminsu0519.github.io/pf/'">포트폴리오 PPT</button>
+      <button class="st-btn primary" onclick="window.print()">이력서 PDF (A4)</button>
+    </div>
+  </div>
+  <section class="resume-section-wrap"><main class="resume-wrap">
+        <section class="resume-page" id="res-p1" aria-label="이력서 1페이지">
+          <header class="doc-header">
+            <div class="name-block">
+              <h1 data-tid="r-1" contenteditable="false">김민수</h1>
+              <div class="role-sub" data-tid="r-2" contenteditable="false">로봇 S/W · 자율주행(ROS 2) 엔지니어</div>
+            </div>
+            <div class="doc-tag">이력서 (Resume)<br>업데이트: 2026.11</div>
+          </header>
+
+          <div class="section">
+            <h2 class="section-title" data-tid="r-3" contenteditable="false">INTRODUCTION</h2>
+            <div class="intro-grid">
+              <div class="photo-box"><img src="./assets/profile_photo.jpg" alt="김민수 증명사진"></div>
+              <div class="intro-texts">
+                <div class="intro-block">
+                  <h3 data-tid="r-4" contenteditable="false">지원동기</h3>
+                  <p data-tid="r-5" contenteditable="false">미국 SK배터리·현대모비스 등 79대 산업용 AMR 양산 라인의 필드 테스트·디버깅 경험을 바탕으로, 현장의 센서 노이즈와 주행·인식 오차를 ROS 2 기반 측위(EKF·AMCL), 경로 계획(Nav2·A*), 엣지 AI 비전 소프트웨어로 해결·검증해 왔습니다. 시뮬레이션 검증부터 실물 하드웨어 통합·필드 안정화까지 전 주기를 잇는 로봇 S/W 개발자로 기여하고자 합니다.</p>
+                </div>
+                <div class="intro-block">
+                  <h3 data-tid="r-6" contenteditable="false">필드 트러블슈팅 감각과 ROS 2 · 엣지 AI 통합 역량을 갖춘 개발자</h3>
+                  <p data-tid="r-7" contenteditable="false">물리적 변수와 센서 노이즈를 수치로 규명해 코드로 해결합니다. 50m 반복 구간 위치 이탈을 비대칭 반사판으로 정상화했고, Gazebo 내 휠 슬립 측위 보정(EKF·AMCL, 오차 91.6% 개선)·C++17 정밀 도킹 및 관제 시스템(LSM Bot), 멀티모달 HRI 제어(LIBO), 엣지 NPU 비전 경량화(AutoSavior)를 구현했습니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 class="section-title" data-tid="r-8" contenteditable="false">PERSONAL INFORMATION</h2>
+            <div class="info-grid">
+              <div>
+                <h3 class="sub-heading" data-tid="r-9" contenteditable="false">Contact &amp; Links</h3>
+                <ul class="kv-list">
+                  <li data-tid="r-10" contenteditable="false"><span class="kv-label">이름</span><span class="kv-val" data-tid="r-11" contenteditable="false">김민수</span></li>
+                  <li data-tid="r-12" contenteditable="false"><span class="kv-label">생년월일</span><span class="kv-val" data-tid="r-13" contenteditable="false">1999.05.19 (만 27세)</span></li>
+                  <li data-tid="r-14" contenteditable="false"><span class="kv-label">이메일</span><span class="kv-val" data-tid="r-15" contenteditable="false"><a href="mailto:ajferhcz153@gmail.com">ajferhcz153@gmail.com</a></span></li>
+                  <li data-tid="r-16" contenteditable="false"><span class="kv-label">연락처</span><span class="kv-val" data-tid="r-17" contenteditable="false">010-9900-9256</span></li>
+                  <li data-tid="r-18" contenteditable="false"><span class="kv-label">GitHub</span><span class="kv-val" data-tid="r-19" contenteditable="false"><a href="https://github.com/kimminsu0519" target="_blank" rel="noopener">github.com/kimminsu0519</a></span></li>
+                  <li data-tid="r-20" contenteditable="false"><span class="kv-label">Portfolio</span><span class="kv-val" data-tid="r-21" contenteditable="false"><a class="pf-jump-link" href="https://kimminsu0519.github.io/pf" target="_blank" rel="noopener">kimminsu0519.github.io/pf</a></span></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="sub-heading" data-tid="r-22" contenteditable="false">Career &amp; Education</h3>
+                <ul class="timeline-list">
+        <li class="timeline-item" data-tid="r-23" contenteditable="false">
+          <div class="timeline-top">
+            <span class="timeline-org" data-tid="r-24" contenteditable="false">에드인에듀 아카데미 (부트캠프)</span>
+            <span class="timeline-date" data-tid="r-25" contenteditable="false">2025.02 ~ 2025.08 (960시간)</span>
+          </div>
+          <div class="timeline-desc" data-tid="r-26" contenteditable="false">ROS 2와 인공지능을 활용한 자율주행 로봇 개발자 양성과정 수료</div>
+        </li>
+      
+        <li class="timeline-item" data-tid="r-27" contenteditable="false">
+          <div class="timeline-top">
+            <span class="timeline-org" data-tid="r-28" contenteditable="false">인천대학교 (정보통신공학과)</span>
+            <span class="timeline-date" data-tid="r-29" contenteditable="false">2018.03 ~ 2025.02</span>
+          </div>
+          <div class="timeline-desc" data-tid="r-30" contenteditable="false">공학사 졸업 · 평점 평균 3.82 / 4.50 (전공 3.83 / 4.50)</div>
+        </li>
+      
+        <li class="timeline-item" data-tid="r-31" contenteditable="false">
+          <div class="timeline-top">
+            <span class="timeline-org" data-tid="r-32" contenteditable="false">(주)넥스트디앤에이 (AMR 제어팀 인턴)</span>
+            <span class="timeline-date" data-tid="r-33" contenteditable="false">2021.12 ~ 2022.09 (10개월)</span>
+          </div>
+          <div class="timeline-desc" data-tid="r-34" contenteditable="false">국내·해외 양산 라인 AMR/AGV SLAM 매핑, 티칭 및 센서·PLC 유지보수</div>
+        </li>
+      </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 class="section-title" data-tid="r-35" contenteditable="false">CORE SKILLS</h2>
+            <table class="skills-table"><tbody>
+          <tr>
+            <th data-tid="r-36" contenteditable="false">Robotics &amp; Navigation</th>
+            <td data-tid="r-37" contenteditable="false">
+              <div class="tag-row">
+                <span class="skill-tag is-core">ROS 2</span><span class="skill-tag is-core">Nav2 · EKF · AMCL</span><span class="skill-tag ">SLAM</span><span class="skill-tag ">A* 경로 계획</span><span class="skill-tag ">Gazebo Harmonic</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <th data-tid="r-38" contenteditable="false">Languages &amp; Infra</th>
+            <td data-tid="r-39" contenteditable="false">
+              <div class="tag-row">
+                <span class="skill-tag is-core">Python 3</span><span class="skill-tag is-core">C++17</span><span class="skill-tag is-core">Linux · Ubuntu</span><span class="skill-tag ">Docker</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <th data-tid="r-40" contenteditable="false">AI Vision &amp; Edge</th>
+            <td data-tid="r-41" contenteditable="false">
+              <div class="tag-row">
+                <span class="skill-tag is-core">OpenCV · YOLOv8</span><span class="skill-tag ">MediaPipe</span><span class="skill-tag ">Hailo-8 NPU</span><span class="skill-tag ">Raspberry Pi 5</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <th data-tid="r-42" contenteditable="false">Field &amp; Communication</th>
+            <td data-tid="r-43" contenteditable="false">
+              <div class="tag-row">
+                <span class="skill-tag is-core">SICK LiDAR-LOC · nanoScan3</span><span class="skill-tag ">PLC/PIO · ACS 관제</span><span class="skill-tag ">WebSocket · UDP 멀티스레드</span><span class="skill-tag ">MySQL 8.0</span>
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+
+          <footer class="page-footer">
+            <span>김민수 | 로봇 S/W · 자율주행 엔지니어</span>
+            <span>1 / 3</span>
+          </footer>
+        </section>
+
+        <section class="resume-page page-2" id="res-p2" aria-label="이력서 2페이지">
+          <div class="section">
+            <h2 class="section-title" data-tid="r-44" contenteditable="false">WORK EXPERIENCE <span class="section-note">산업용 AMR/AGV 양산 라인 실무 경력</span></h2>
+            <article class="entry-block">
+              <div class="entry-header">
+                <h3 class="entry-title" data-tid="r-45" contenteditable="false">AMR 제어팀 — 생산라인 자율주행 물류 시스템 셋업 및 제어 (인턴)</h3>
+                <span class="entry-period" data-tid="r-46" contenteditable="false">2021.12 ~ 2022.09 (10개월)</span>
+              </div>
+              <div class="entry-meta">
+                <span data-tid="r-47" contenteditable="false"><strong>담당 직무:</strong> 필드엔지니어</span>
+                <span data-tid="r-48" contenteditable="false"><strong>주요 업무:</strong> LiDAR SLAM 매핑 및 주행 경로 티칭, 양산 라인 AMR/AGV 가동 셋업, 세이프티·PLC/PIO 트러블슈팅</span>
+              </div>
+              <ul class="bullet-list"><li data-tid="r-49" contenteditable="false"><strong>반복 구간 위치 이탈 원인 규명 및 정상화:</strong> 50m 대칭 라인의 이탈 원인을 스캔 매칭 분석으로 규명하고 비대칭 반사판 배치로 위치 이탈 재발 0건 안정화</li><li data-tid="r-50" contenteditable="false"><strong>세이프티 센서 오감지 해소:</strong> 구역별 방호 필드 분할 설계와 신호 지연 보정으로 <code>nanoScan3</code> 간헐적 오정지 문제 해결 및 연속 가동 확보</li><li data-tid="r-51" contenteditable="false"><strong>양산 AMR 플릿 79대 현장 셋업:</strong> 미국 SK배터리(39대)·현대모비스 대구(40대) 라인 SLAM 매핑, 정밀 도킹 티칭 및 PLC/PIO·ACS 관제 연동 완수</li></ul>
+            </article>
+          </div>
+
+          <div class="section">
+            <h2 class="section-title" data-tid="r-52" contenteditable="false">PROJECTS <span class="section-note">핵심 우선순위순</span></h2>
+            
+          <article class="entry-block">
+            <div class="entry-header">
+              <h3 class="entry-title" data-tid="r-53" contenteditable="false">1. LSM Bot — 스마트 물류 센터 자율주행 AMR 및 FMS 통합 관제 시스템</h3>
+              <span class="entry-period" data-tid="r-54" contenteditable="false">2026.07 ~ 2026.09</span>
+            </div>
+            <div class="entry-meta">
+              <span data-tid="r-55" contenteditable="false"><strong>담당 역할:</strong> 1인 단독 개발</span>
+              <span data-tid="r-56" contenteditable="false"><strong>기술 스택:</strong> ROS 2 Jazzy, C++17, Python 3.12, Gazebo Harmonic, Nav2, EKF, WebSocket</span>
+            </div>
+            <p class="entry-summary" data-tid="r-57" contenteditable="false"><strong>개요:</strong> 스마트 물류 창고를 모사한 Gazebo 시뮬레이션 구축 및 C++17 실시간 제어·관제(FMS) 통합 자율주행 시스템</p>
+            <ul class="bullet-list"><li data-tid="r-58" contenteditable="false"><strong>휠 슬립 환경 측위 오차 개선:</strong> 6축 자이로 기반 EKF 센서 퓨전과 맵 원점 정합을 적용해 슬립 구간 주행 <strong>위치 오차 91.6% · 회전 오차 86.4%</strong> 감소</li><li data-tid="r-59" contenteditable="false"><strong>C++17 실시간 제어 코어 최적화:</strong> 기존 Python 경로 탐색·측위·안전 감시 모듈을 C++17로 재구축해 연산 속도 <strong>39~108배 가속</strong> 및 메모리 <strong>71.5%</strong> 절감</li><li data-tid="r-60" contenteditable="false"><strong>작업장 정밀 도킹 제어 및 안전 감시:</strong> Nav2 정차 한계를 보완하는 PID 정밀 도킹과 LiDAR 안전 제동으로 작업장 정차 오차를 <strong>~29cm → 1.9~3.4cm</strong>로 축소</li><li data-tid="r-61" contenteditable="false"><strong>물류 작업 상태 머신(FSM) 및 통합 관제:</strong> 최단 경로 순차 배차와 웹 관제(WebSocket)를 연동해 공차·상차·하역·복귀 전 공정 주행 사이클 검증 완주</li></ul>
+          </article>
+        
+          <article class="entry-block">
+            <div class="entry-header">
+              <h3 class="entry-title" data-tid="r-62" contenteditable="false">2. LIBO — ROS 2와 인공지능을 활용한 자율주행 서점 도우미 로봇</h3>
+              <span class="entry-period" data-tid="r-63" contenteditable="false">2025.07 ~ 2025.08 (5인)</span>
+            </div>
+            <div class="entry-meta">
+              <span data-tid="r-64" contenteditable="false"><strong>담당 역할:</strong> AI HRI · ROS 2 통신 규격 · DB (총 5인 · AI/통신 단독)</span>
+              <span data-tid="r-65" contenteditable="false"><strong>기술 스택:</strong> ROS 2 Humble, Python 3.10, OpenCV, MediaPipe, OpenAI API, MySQL 8.0</span>
+            </div>
+            <p class="entry-summary" data-tid="r-66" contenteditable="false"><strong>개요:</strong> 서점 방문객의 도서 탐색·안내를 수행하는 ROS 2 기반 자율주행 및 멀티모달 HRI 도우미 로봇 시스템</p>
+            <ul class="bullet-list"><li data-tid="r-67" contenteditable="false"><strong>제스처 오인식 및 급정거 방지:</strong> 5프레임 합의 필터와 장애물 우선 0.3초 선형 감속 제어를 적용해 적재 주행 중 흔들림·오작동 차단</li><li data-tid="r-68" contenteditable="false"><strong>실시간 영상 스트림 병목 해소:</strong> UDP 수신 버퍼 확장 및 스레드 Lock 분리로 프레임 유실을 방지하고 30fps 실시간 비전 추론 안정화</li><li data-tid="r-69" contenteditable="false"><strong>음성 호출 즉시 정지 및 응답 지연 개선:</strong> 한국어 호출어 감지 즉시 정지와 침묵 구간 자동 감지로 음성 대기 지연 해소(15초 → 1.5초)</li><li data-tid="r-70" contenteditable="false"><strong>분산 ROS 2 인터페이스 및 모드 통합 제어:</strong> ROS 2 커스텀 통신 규격과 LLM 의도 분류를 결합해 주행·추종·제스처 모드 간 충돌 없는 전환 구현</li></ul>
+          </article>
+        
+          </div>
+
+          <footer class="page-footer">
+            <span>김민수 | 로봇 S/W · 자율주행 엔지니어</span>
+            <span>2 / 3</span>
+          </footer>
+        </section>
+
+        <section class="resume-page" id="res-p3" aria-label="이력서 3페이지">
+          
+          <div class="section">
+            <h2 class="section-title" data-tid="r-71" contenteditable="false">PROJECTS (계속) <span class="section-note">학사학위논문 연계 및 추가 프로젝트</span></h2>
+            
+          <article class="entry-block">
+            <div class="entry-header">
+              <h3 class="entry-title" data-tid="r-72" contenteditable="false">3. AutoSavior — IoT 화재 감지 연계 자율주행 화재 진압 로봇 (졸업작품)</h3>
+              <span class="entry-period" data-tid="r-73" contenteditable="false">2024.04 ~ 2024.11 (3인)</span>
+            </div>
+            <div class="entry-meta">
+              <span data-tid="r-74" contenteditable="false"><strong>담당 역할:</strong> AI 화재 비전 · 엣지 경량화 · 프로젝트 총괄</span>
+              <span data-tid="r-75" contenteditable="false"><strong>기술 스택:</strong> ROS 2 Humble, Docker, YOLOv8n, Hailo-8 NPU, Cartographer SLAM</span>
+            </div>
+            <p class="entry-summary" data-tid="r-76" contenteditable="false"><strong>개요:</strong> 실내 구역 CCTV 관제 연동을 통해 화재 발생 지점으로 자율주행 이동 후 정밀 조준·진압하는 로봇 시스템</p>
+            <ul class="bullet-list"><li data-tid="r-77" contenteditable="false"><strong>화염·연기 데이터셋 증강 및 모델 학습:</strong> 데이터 증강(800 → 1,600장) 및 경량 객체 탐지 모델 학습으로 검증 정확도 <strong>mAP@50 0.926 · Recall 0.927</strong> 달성</li><li data-tid="r-78" contenteditable="false"><strong>엣지 NPU 가속 파이프라인 구축:</strong> 모델 경량화 및 엣지 가속 변환을 거쳐 Raspberry Pi 5 + Hailo-8 온보드 실시간 추론 환경 배포</li><li data-tid="r-79" contenteditable="false"><strong>ROS 2 자율주행·조준 진압 통합 총괄:</strong> Docker 기반 SLAM 자율주행과 화염 중앙 정렬 진압 루프 연동, 한이음 멘토링 및 학사학위논문 총괄</li></ul>
+          </article>
+        
+          </div>
+
+          
+          <div class="section">
+            <h2 class="section-title" data-tid="r-80" contenteditable="false">AWARDS <span class="section-note">대외 수상 실적</span></h2>
+            
+        <article class="entry-block">
+          <div class="entry-header">
+            <h3 class="entry-title" data-tid="r-81" contenteditable="false">2025 WCRC AI 주행로봇 (대학일반) — 은상 (2위)</h3>
+            <span class="entry-period" data-tid="r-82" contenteditable="false">2025.08</span>
+          </div>
+          <div class="entry-meta">
+            <span data-tid="r-83" contenteditable="false"><strong>수상 기관:</strong> 한국로봇교육콘텐츠협회</span>
+            <span data-tid="r-84" contenteditable="false"><strong>참여 역할:</strong> 팀장 (PM) · 시스템 아키텍처 및 UI 프로토타입 설계</span>
+          </div>
+          <p class="entry-summary" data-tid="r-85" contenteditable="false"><strong>개요:</strong> AI 자율주행로봇 기반 빗물받이 점검·관제 시스템 기획 및 프로토타입 설계</p>
+          <ul class="bullet-list"><li data-tid="r-86" contenteditable="false">팀장(PM)으로서 기술 타당성 조사(RTK-GPS·3D LiDAR·AI) 및 H/W–AI–웹관제 전체 아키텍처·데이터 흐름 설계</li><li data-tid="r-87" contenteditable="false">주행·상태 진단 시나리오 정의 및 관제 대시보드 UI 프로토타입 제작을 총괄해 대학일반부 은상(2위) 수상</li></ul>
+        </article>
+      
+        <article class="entry-block">
+          <div class="entry-header">
+            <h3 class="entry-title" data-tid="r-88" contenteditable="false">스마트해상물류 × ICT멘토링 공모전 (한이음 드림업) — 동상</h3>
+            <span class="entry-period" data-tid="r-89" contenteditable="false">2024.12.04</span>
+          </div>
+          <div class="entry-meta">
+            <span data-tid="r-90" contenteditable="false"><strong>수상 기관:</strong> 한국정보산업연합회 (주최: 해양수산부 · 공동주관: 정보통신기획평가원, 울산항만공사)</span>
+            
+          </div>
+          <p class="entry-summary" data-tid="r-91" contenteditable="false"><strong>개요:</strong> IoT 기반 화재 조기 감지 및 자율주행 화재 진압 로봇 시스템 설계·구현 (상세 기술 구현: PROJECTS 3. AutoSavior 참조)</p>
+          
+        </article>
+      
+          </div>
+
+          
+          <div class="section">
+            <h2 class="section-title" data-tid="r-92" contenteditable="false">CERTIFICATIONS</h2>
+            <table class="cert-table">
+              <thead>
+                <tr><th style="width:34%;" data-tid="r-93" contenteditable="false">자격 / 어학명</th><th style="width:24%;" data-tid="r-94" contenteditable="false">등급 / 합격 구분</th><th style="width:20%;" data-tid="r-95" contenteditable="false">취득일</th><th style="width:22%;" data-tid="r-96" contenteditable="false">발행기관</th></tr>
+              </thead>
+              <tbody>
+        <tr>
+          <td class="cert-name" data-tid="r-97" contenteditable="false">정보처리기사</td>
+          <td data-tid="r-98" contenteditable="false">최종 합격 (국가기술자격)</td>
+          <td data-tid="r-99" contenteditable="false">2026.09.11</td>
+          <td data-tid="r-100" contenteditable="false">한국산업인력공단</td>
+        </tr>
+      
+        <tr>
+          <td class="cert-name" data-tid="r-101" contenteditable="false">OPIc (영어 말하기)</td>
+          <td data-tid="r-102" contenteditable="false">IM1</td>
+          <td data-tid="r-103" contenteditable="false">2025.01.04</td>
+          <td data-tid="r-104" contenteditable="false">ACTFL</td>
+        </tr>
+      
+        <tr>
+          <td class="cert-name" data-tid="r-105" contenteditable="false">자동차운전면허</td>
+          <td data-tid="r-106" contenteditable="false">2종 보통</td>
+          <td data-tid="r-107" contenteditable="false">2021.10</td>
+          <td data-tid="r-108" contenteditable="false">경찰청</td>
+        </tr>
+      </tbody>
+            </table>
+          </div>
+
+          <footer class="page-footer">
+            <span>김민수 | 로봇 S/W · 자율주행 엔지니어</span>
+            <span>3 / 3</span>
+          </footer>
+        </section>
+      </main></section>
+  <script>
+    function fitResumeMobile() {
+      const wrap = document.querySelector('.resume-wrap');
+      const pages = Array.from(document.querySelectorAll('.resume-page'));
+      if (!pages.length) return;
+      const baseW = pages[0].offsetWidth || 794;
+      const vw = document.documentElement.clientWidth - 20;
+      const sc = vw < baseW ? Math.max(0.4, vw / baseW) : 1;
+      pages.forEach(p => {
+        if (sc < 1) {
+          p.style.transform = 'scale(' + sc + ')';
+          p.style.transformOrigin = 'top center';
+          p.style.marginBottom = '-' + Math.round(p.offsetHeight * (1 - sc) - 10) + 'px';
+        } else {
+          p.style.transform = '';
+          p.style.marginBottom = '';
+        }
+      });
+    }
+    window.addEventListener('resize', fitResumeMobile);
+    window.addEventListener('beforeprint', () => {
+      document.querySelectorAll('.resume-page').forEach(p => { p.style.transform = ''; p.style.marginBottom = ''; });
+    });
+    window.addEventListener('afterprint', fitResumeMobile);
+    fitResumeMobile();
+  </script>
+</body>
+</html>
