@@ -1,0 +1,56 @@
+[
+  {
+    "index": 0,
+    "img": "./assets/resume_p1.png",
+    "alt": "김민수 이력서 1페이지",
+    "hotspots": [
+      {
+        "label": "GitHub 프로필 열기",
+        "uri": "https://github.com/kimminsu0519",
+        "left": 15.9,
+        "top": 45.691,
+        "width": 18.559,
+        "height": 1.75
+      },
+      {
+        "label": "포트폴리오 열기",
+        "uri": "https://kimminsu0519.github.io/pf",
+        "left": 15.9,
+        "top": 47.651,
+        "width": 18.557,
+        "height": 1.75
+      },
+      {
+        "label": "이메일 보내기",
+        "uri": "mailto:ajferhcz153@gmail.com",
+        "left": 15.9,
+        "top": 41.772,
+        "width": 16.795,
+        "height": 1.75
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "img": "./assets/resume_p2.png",
+    "alt": "김민수 이력서 2페이지",
+    "hotspots": [
+      {
+        "label": "LSM Bot GitHub 열기",
+        "uri": "https://github.com/kimminsu0519/LSM_Bot",
+        "left": 7.719,
+        "top": 8.196,
+        "width": 7.518,
+        "height": 1.963
+      },
+      {
+        "label": "LIBO GitHub 열기",
+        "uri": "https://github.com/kimminsu0519/ros-repo-1",
+        "left": 7.719,
+        "top": 23.073,
+        "width": 4.551,
+        "height": 1.963
+      }
+    ]
+  }
+]
