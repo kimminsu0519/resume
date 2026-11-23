@@ -62,6 +62,8 @@
       overflow: hidden;
     }
     .page-card.active { display: block; }
+    body.ppt-view .page-card { display: none; }
+    body.ppt-view .page-card.active { display: block; }
     body.overview-mode .page-card {
       display: block;
       height: auto;
@@ -225,6 +227,7 @@
       overview = !overview;
       document.body.classList.toggle('overview-mode', overview);
       document.body.classList.toggle('ppt-view', !overview);
+      window.scrollTo(0, 0);
       render();
     });
 
@@ -243,6 +246,7 @@
           current = i;
           document.body.classList.remove('overview-mode');
           document.body.classList.add('ppt-view');
+          window.scrollTo(0, 0);
           render();
         }
       });
