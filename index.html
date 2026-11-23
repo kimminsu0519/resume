@@ -416,8 +416,8 @@
       showHudTemporarily();
     }
 
-    // PC-only Fullscreen button (visible ONLY when not in fullscreen)
-    const canFullscreen = !isCoarsePointer && Boolean(document.documentElement.requestFullscreen);
+    // Fullscreen button on any browser supporting Fullscreen API (PC + Android Chrome, etc.)
+    const canFullscreen = Boolean((document.fullscreenEnabled ?? true) && document.documentElement.requestFullscreen);
     function syncFullscreenButton() {
       const isFs = Boolean(document.fullscreenElement) ||
         (Math.abs(window.innerHeight - screen.height) <= 2 && Math.abs(window.innerWidth - screen.width) <= 2);
